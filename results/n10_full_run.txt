@@ -1,0 +1,284 @@
+======================================================================================================================
+N10  HIERARCHICAL BOOTSTRAP: training seeds x source images   (B=2000; seeds never averaged beforehand; one shared image draw => paired)
+======================================================================================================================
+cells: llava/clean/DS[1], llava/clean/P[5], llava/clean/S[5], llava/crude/DP[2], llava/crude/DS[3], llava/crude/P[5], llava/crude/S[5], llava/medium/P[3], llava/medium/S[3], llava/none/N[3], q7/clean/P[2], q7/clean/S[2], q7/crude/P[2], q7/crude/S[2], q7/none/N[2], qwen/clean/P[3], qwen/clean/S[3], qwen/crude/DS[3], qwen/crude/P[3], qwen/crude/S[3], qwen/medium/P[3], qwen/medium/S[3], qwen/none/N[3], smol/clean/P[3], smol/clean/S[3], smol/crude/DS[3], smol/crude/P[3], smol/crude/S[3], smol/medium/P[3], smol/medium/S[3], smol/none/N[3]
+frozen files: llava, q7, qwen, smol
+
+==== llava: 235 test groups from 231 source images ====
+  cell         seeds  shortcut [hier. 95% CI]      images-only CI (seeds fixed) removal rate [hier.]    gain vs frozen [hier.]
+  clean/DS         1  +0.017 [+0.004,+0.034]       +0.017 [+0.004,+0.034]       0.974 [0.950,0.992]     +0.106 [+0.068,+0.145]
+  clean/N          3  -0.006 [-0.025,+0.009]       -0.006 [-0.017,+0.003]       0.843 [0.792,0.888]     -0.026 [-0.063,+0.007]
+  clean/P          5  +0.009 [-0.006,+0.026]       +0.009 [-0.005,+0.025]       0.978 [0.957,0.994]     +0.110 [+0.071,+0.149]
+  clean/S          5  +0.009 [-0.004,+0.026]       +0.009 [-0.003,+0.025]       0.974 [0.953,0.991]     +0.106 [+0.069,+0.146]
+  crude/DP         2  +0.019 [+0.002,+0.042]       +0.019 [+0.002,+0.042]       0.979 [0.958,0.996]     +0.294 [+0.233,+0.357]
+  crude/DS         3  +0.043 [+0.021,+0.069]       +0.043 [+0.023,+0.068]       0.983 [0.966,1.000]     +0.298 [+0.238,+0.361]
+  crude/N          3  +0.000 [-0.021,+0.021]       +0.000 [-0.014,+0.014]       0.678 [0.614,0.736]     -0.007 [-0.052,+0.036]
+  crude/P          5  +0.009 [-0.014,+0.033]       +0.009 [-0.011,+0.031]       0.981 [0.963,0.995]     +0.296 [+0.236,+0.360]
+  crude/S          5  +0.146 [+0.068,+0.233]       +0.146 [+0.111,+0.184]       0.991 [0.978,1.000]     +0.306 [+0.246,+0.369]
+  medium/N         3  -0.009 [-0.025,+0.000]       -0.009 [-0.020,+0.000]       0.801 [0.743,0.852]     -0.007 [-0.047,+0.035]
+  medium/P         3  +0.001 [-0.013,+0.017]       +0.001 [-0.011,+0.013]       0.979 [0.959,0.994]     +0.170 [+0.125,+0.220]
+  medium/S         3  +0.010 [-0.004,+0.029]       +0.010 [-0.003,+0.024]       0.983 [0.966,0.996]     +0.174 [+0.129,+0.227]
+
+  INDIVIDUAL SEEDS (each run alone; CI over source images only):
+  cell          seed  shortcut [95% CI]          removal rate [95% CI]
+  clean/DS         0  +0.017 [+0.004,+0.034]     0.974 [0.950,0.992]
+  clean/N          0  -0.013 [-0.030,+0.000]     0.826 [0.773,0.872]
+  clean/N          1  +0.009 [+0.000,+0.021]     0.860 [0.812,0.903]
+  clean/N          2  -0.013 [-0.030,+0.000]     0.843 [0.793,0.888]
+  clean/N        between-seed shortcut: min -0.013  max +0.009  SD 0.012
+  clean/P          0  +0.009 [-0.008,+0.026]     0.983 [0.966,0.996]
+  clean/P          1  +0.000 [-0.017,+0.017]     0.979 [0.957,0.996]
+  clean/P          2  +0.013 [-0.004,+0.034]     0.983 [0.966,0.996]
+  clean/P          3  +0.009 [+0.000,+0.021]     0.966 [0.940,0.987]
+  clean/P          4  +0.013 [-0.004,+0.034]     0.979 [0.957,0.996]
+  clean/P        between-seed shortcut: min +0.000  max +0.013  SD 0.005
+  clean/S          0  +0.004 [-0.009,+0.021]     0.979 [0.957,0.996]
+  clean/S          1  +0.021 [+0.004,+0.042]     0.983 [0.966,0.996]
+  clean/S          2  +0.013 [+0.000,+0.030]     0.979 [0.958,0.996]
+  clean/S          3  +0.004 [-0.009,+0.021]     0.970 [0.945,0.991]
+  clean/S          4  +0.004 [-0.009,+0.021]     0.962 [0.936,0.983]
+  clean/S        between-seed shortcut: min +0.004  max +0.021  SD 0.008
+  crude/DP         0  +0.021 [+0.004,+0.043]     0.979 [0.958,0.996]
+  crude/DP         1  +0.017 [+0.000,+0.039]     0.979 [0.958,0.996]
+  crude/DP       between-seed shortcut: min +0.017  max +0.021  SD 0.003
+  crude/DS         0  +0.038 [+0.017,+0.064]     0.983 [0.966,1.000]
+  crude/DS         1  +0.043 [+0.021,+0.072]     0.983 [0.966,1.000]
+  crude/DS         2  +0.047 [+0.021,+0.077]     0.983 [0.966,1.000]
+  crude/DS       between-seed shortcut: min +0.038  max +0.047  SD 0.004
+  crude/N          0  -0.009 [-0.026,+0.008]     0.668 [0.606,0.730]
+  crude/N          1  +0.017 [+0.004,+0.034]     0.694 [0.630,0.752]
+  crude/N          2  -0.009 [-0.026,+0.008]     0.672 [0.611,0.733]
+  crude/N        between-seed shortcut: min -0.009  max +0.017  SD 0.015
+  crude/P          0  +0.000 [-0.021,+0.021]     0.979 [0.958,0.996]
+  crude/P          1  -0.004 [-0.026,+0.017]     0.979 [0.958,0.996]
+  crude/P          2  +0.021 [-0.004,+0.047]     0.987 [0.970,1.000]
+  crude/P          3  +0.004 [-0.021,+0.030]     0.974 [0.953,0.991]
+  crude/P          4  +0.021 [+0.000,+0.047]     0.987 [0.970,1.000]
+  crude/P        between-seed shortcut: min -0.004  max +0.021  SD 0.012
+  crude/S          0  +0.034 [+0.004,+0.067]     0.987 [0.970,1.000]
+  crude/S          1  +0.187 [+0.141,+0.236]     0.996 [0.987,1.000]
+  crude/S          2  +0.226 [+0.172,+0.283]     0.991 [0.979,1.000]
+  crude/S          3  +0.055 [+0.021,+0.090]     0.987 [0.970,1.000]
+  crude/S          4  +0.230 [+0.174,+0.286]     0.991 [0.979,1.000]
+  crude/S        between-seed shortcut: min +0.034  max +0.230  SD 0.095
+  medium/N         0  -0.013 [-0.030,+0.000]     0.796 [0.740,0.846]
+  medium/N         1  +0.000 [+0.000,+0.000]     0.826 [0.773,0.872]
+  medium/N         2  -0.013 [-0.030,+0.000]     0.783 [0.725,0.835]
+  medium/N       between-seed shortcut: min -0.013  max +0.000  SD 0.007
+  medium/P         0  -0.004 [-0.013,+0.000]     0.979 [0.957,0.996]
+  medium/P         1  -0.004 [-0.021,+0.009]     0.974 [0.953,0.991]
+  medium/P         2  +0.013 [-0.004,+0.034]     0.983 [0.966,0.996]
+  medium/P       between-seed shortcut: min -0.004  max +0.013  SD 0.010
+  medium/S         0  +0.000 [-0.013,+0.013]     0.983 [0.966,0.996]
+  medium/S         1  +0.021 [+0.004,+0.042]     0.983 [0.966,0.996]
+  medium/S         2  +0.009 [-0.008,+0.026]     0.983 [0.966,0.996]
+  medium/S       between-seed shortcut: min +0.000  max +0.021  SD 0.011
+
+  PAIRED CONTRASTS (shared image draw; seeds redrawn independently; * = 95% CI excludes 0):
+    shortcut crude: S minus P                           +0.138 [+0.060,+0.221] *
+    shortcut crude: S minus N (no-edit control)         +0.147 [+0.068,+0.233] *
+    removal  crude: S minus N                           +0.313 [+0.256,+0.374] *
+    removal  crude: P minus N                           +0.304 [+0.248,+0.364] *
+    shortcut crude: DS minus S (DPO-style vs CE)        -0.104 [-0.183,-0.027] *
+    shortcut crude: DS minus DP                         +0.023 [+0.009,+0.043] *
+    shortcut medium: S minus P                          +0.009 [-0.007,+0.030] 
+    shortcut medium: S minus N (no-edit control)        +0.019 [+0.003,+0.041] *
+    removal  medium: S minus N                          +0.182 [+0.134,+0.239] *
+    removal  medium: P minus N                          +0.178 [+0.130,+0.234] *
+    shortcut clean: S minus P                           +0.001 [-0.009,+0.012] 
+    shortcut clean: S minus N (no-edit control)         +0.016 [-0.001,+0.037] 
+    removal  clean: S minus N                           +0.132 [+0.090,+0.179] *
+    removal  clean: P minus N                           +0.135 [+0.093,+0.183] *
+    shortcut clean: DS minus S (DPO-style vs CE)        +0.008 [-0.005,+0.025] 
+
+==== q7: 235 test groups from 231 source images ====
+  cell         seeds  shortcut [hier. 95% CI]      images-only CI (seeds fixed) removal rate [hier.]    gain vs frozen [hier.]
+  clean/N          2  -0.021 [-0.043,-0.004]       -0.021 [-0.043,-0.004]       0.955 [0.928,0.979]     -0.019 [-0.038,-0.004]
+  clean/P          2  -0.015 [-0.033,-0.002]       -0.015 [-0.032,-0.002]       0.991 [0.979,1.000]     +0.017 [+0.004,+0.034]
+  clean/S          2  -0.015 [-0.032,-0.002]       -0.015 [-0.032,-0.002]       0.987 [0.970,1.000]     +0.013 [+0.000,+0.030]
+  crude/N          2  -0.021 [-0.043,-0.004]       -0.021 [-0.043,-0.004]       0.853 [0.806,0.897]     -0.053 [-0.086,-0.024]
+  crude/P          2  -0.004 [-0.023,+0.013]       -0.004 [-0.023,+0.013]       0.994 [0.983,1.000]     +0.087 [+0.055,+0.127]
+  crude/S          2  +0.023 [+0.004,+0.046]       +0.023 [+0.004,+0.044]       0.996 [0.987,1.000]     +0.089 [+0.056,+0.129]
+  medium/N         2  -0.021 [-0.043,-0.004]       -0.021 [-0.043,-0.004]       0.928 [0.889,0.962]     -0.043 [-0.075,-0.013]
+
+  INDIVIDUAL SEEDS (each run alone; CI over source images only):
+  cell          seed  shortcut [95% CI]          removal rate [95% CI]
+  clean/N          0  -0.021 [-0.043,-0.004]     0.957 [0.931,0.983]
+  clean/N          1  -0.021 [-0.043,-0.004]     0.953 [0.924,0.979]
+  clean/N        between-seed shortcut: min -0.021  max -0.021  SD 0.000
+  clean/P          0  -0.017 [-0.034,-0.004]     0.991 [0.979,1.000]
+  clean/P          1  -0.013 [-0.030,+0.000]     0.991 [0.979,1.000]
+  clean/P        between-seed shortcut: min -0.017  max -0.013  SD 0.003
+  clean/S          0  -0.017 [-0.034,-0.004]     0.987 [0.970,1.000]
+  clean/S          1  -0.013 [-0.030,+0.000]     0.987 [0.970,1.000]
+  clean/S        between-seed shortcut: min -0.017  max -0.013  SD 0.003
+  crude/N          0  -0.021 [-0.043,-0.004]     0.864 [0.821,0.906]
+  crude/N          1  -0.021 [-0.043,-0.004]     0.843 [0.797,0.887]
+  crude/N        between-seed shortcut: min -0.021  max -0.021  SD 0.000
+  crude/P          0  +0.000 [-0.021,+0.021]     0.996 [0.987,1.000]
+  crude/P          1  -0.009 [-0.026,+0.004]     0.991 [0.979,1.000]
+  crude/P        between-seed shortcut: min -0.009  max +0.000  SD 0.006
+  crude/S          0  +0.021 [+0.000,+0.043]     0.996 [0.987,1.000]
+  crude/S          1  +0.026 [+0.008,+0.047]     0.996 [0.987,1.000]
+  crude/S        between-seed shortcut: min +0.021  max +0.026  SD 0.003
+  medium/N         0  -0.021 [-0.043,-0.004]     0.940 [0.908,0.967]
+  medium/N         1  -0.021 [-0.043,-0.004]     0.915 [0.878,0.949]
+  medium/N       between-seed shortcut: min -0.021  max -0.021  SD 0.000
+
+  PAIRED CONTRASTS (shared image draw; seeds redrawn independently; * = 95% CI excludes 0):
+    shortcut crude: S minus P                           +0.028 [+0.009,+0.050] *
+    shortcut crude: S minus N (no-edit control)         +0.045 [+0.021,+0.072] *
+    removal  crude: S minus N                           +0.143 [+0.099,+0.190] *
+    removal  crude: P minus N                           +0.141 [+0.098,+0.187] *
+    shortcut clean: S minus P                           +0.000 [-0.006,+0.007] 
+    shortcut clean: S minus N (no-edit control)         +0.006 [+0.000,+0.017] 
+    removal  clean: S minus N                           +0.032 [+0.013,+0.056] *
+    removal  clean: P minus N                           +0.036 [+0.013,+0.060] *
+
+==== qwen: 235 test groups from 231 source images ====
+  cell         seeds  shortcut [hier. 95% CI]      images-only CI (seeds fixed) removal rate [hier.]    gain vs frozen [hier.]
+  clean/N          3  -0.014 [-0.032,-0.001]       -0.014 [-0.030,-0.003]       0.939 [0.897,0.974]     -0.040 [-0.077,-0.009]
+  clean/P          3  -0.016 [-0.034,+0.000]       -0.016 [-0.034,-0.001]       0.996 [0.986,1.000]     +0.017 [+0.000,+0.037]
+  clean/S          3  -0.014 [-0.031,-0.001]       -0.014 [-0.031,-0.001]       0.994 [0.983,1.000]     +0.016 [+0.003,+0.034]
+  crude/DS         3  +0.004 [-0.022,+0.034]       +0.004 [-0.011,+0.017]       0.969 [0.941,0.991]     +0.075 [+0.042,+0.113]
+  crude/N          3  -0.017 [-0.034,-0.004]       -0.017 [-0.034,-0.004]       0.745 [0.654,0.838]     -0.149 [-0.234,-0.060]
+  crude/P          3  +0.000 [-0.021,+0.021]       +0.000 [-0.020,+0.020]       0.994 [0.982,1.000]     +0.101 [+0.063,+0.142]
+  crude/S          3  +0.023 [-0.006,+0.051]       +0.023 [-0.004,+0.050]       0.996 [0.986,1.000]     +0.102 [+0.068,+0.140]
+  medium/N         3  -0.016 [-0.034,-0.003]       -0.016 [-0.033,-0.003]       0.882 [0.823,0.936]     -0.067 [-0.120,-0.019]
+  medium/P         3  -0.014 [-0.033,-0.000]       -0.014 [-0.032,-0.001]       0.996 [0.987,1.000]     +0.047 [+0.021,+0.075]
+  medium/S         3  -0.013 [-0.030,+0.001]       -0.013 [-0.030,+0.000]       1.000 [1.000,1.000]     +0.051 [+0.025,+0.081]
+
+  INDIVIDUAL SEEDS (each run alone; CI over source images only):
+  cell          seed  shortcut [95% CI]          removal rate [95% CI]
+  clean/N          0  -0.017 [-0.034,-0.004]     0.928 [0.890,0.958]
+  clean/N          1  -0.017 [-0.034,-0.004]     0.919 [0.881,0.953]
+  clean/N          2  -0.009 [-0.021,+0.000]     0.970 [0.945,0.991]
+  clean/N        between-seed shortcut: min -0.017  max -0.009  SD 0.005
+  clean/P          0  -0.017 [-0.034,-0.004]     0.991 [0.979,1.000]
+  clean/P          1  -0.017 [-0.034,-0.004]     0.996 [0.987,1.000]
+  clean/P          2  -0.013 [-0.034,+0.004]     1.000 [1.000,1.000]
+  clean/P        between-seed shortcut: min -0.017  max -0.013  SD 0.002
+  clean/S          0  -0.017 [-0.034,-0.004]     0.991 [0.979,1.000]
+  clean/S          1  -0.013 [-0.030,+0.000]     0.996 [0.987,1.000]
+  clean/S          2  -0.013 [-0.030,+0.000]     0.996 [0.987,1.000]
+  clean/S        between-seed shortcut: min -0.017  max -0.013  SD 0.002
+  crude/DS         0  +0.000 [-0.017,+0.017]     0.966 [0.941,0.987]
+  crude/DS         1  +0.030 [+0.008,+0.056]     0.987 [0.971,1.000]
+  crude/DS         2  -0.017 [-0.034,-0.004]     0.953 [0.924,0.979]
+  crude/DS       between-seed shortcut: min -0.017  max +0.030  SD 0.024
+  crude/N          0  -0.017 [-0.034,-0.004]     0.711 [0.648,0.768]
+  crude/N          1  -0.017 [-0.034,-0.004]     0.681 [0.619,0.738]
+  crude/N          2  -0.017 [-0.034,-0.004]     0.843 [0.793,0.888]
+  crude/N        between-seed shortcut: min -0.017  max -0.017  SD 0.000
+  crude/P          0  -0.004 [-0.022,+0.013]     0.987 [0.970,1.000]
+  crude/P          1  -0.004 [-0.022,+0.013]     0.996 [0.987,1.000]
+  crude/P          2  +0.009 [-0.017,+0.034]     1.000 [1.000,1.000]
+  crude/P        between-seed shortcut: min -0.004  max +0.009  SD 0.007
+  crude/S          0  +0.017 [-0.009,+0.043]     0.991 [0.979,1.000]
+  crude/S          1  +0.026 [-0.004,+0.055]     1.000 [1.000,1.000]
+  crude/S          2  +0.026 [-0.004,+0.056]     0.996 [0.987,1.000]
+  crude/S        between-seed shortcut: min +0.017  max +0.026  SD 0.005
+  medium/N         0  -0.017 [-0.034,-0.004]     0.872 [0.826,0.914]
+  medium/N         1  -0.017 [-0.034,-0.004]     0.843 [0.794,0.888]
+  medium/N         2  -0.013 [-0.030,+0.000]     0.932 [0.897,0.962]
+  medium/N       between-seed shortcut: min -0.017  max -0.013  SD 0.002
+  medium/P         0  -0.013 [-0.034,+0.004]     0.991 [0.979,1.000]
+  medium/P         1  -0.013 [-0.030,+0.000]     1.000 [1.000,1.000]
+  medium/P         2  -0.017 [-0.034,-0.004]     0.996 [0.987,1.000]
+  medium/P       between-seed shortcut: min -0.017  max -0.013  SD 0.002
+  medium/S         0  -0.017 [-0.034,-0.004]     1.000 [1.000,1.000]
+  medium/S         1  -0.009 [-0.026,+0.009]     1.000 [1.000,1.000]
+  medium/S         2  -0.013 [-0.030,+0.000]     1.000 [1.000,1.000]
+  medium/S       between-seed shortcut: min -0.017  max -0.009  SD 0.004
+
+  PAIRED CONTRASTS (shared image draw; seeds redrawn independently; * = 95% CI excludes 0):
+    shortcut crude: S minus P                           +0.023 [+0.006,+0.045] *
+    shortcut crude: S minus N (no-edit control)         +0.040 [+0.017,+0.067] *
+    removal  crude: S minus N                           +0.252 [+0.158,+0.339] *
+    removal  crude: P minus N                           +0.251 [+0.156,+0.342] *
+    shortcut crude: DS minus S (DPO-style vs CE)        -0.018 [-0.050,+0.016] 
+    shortcut medium: S minus P                          +0.001 [-0.006,+0.011] 
+    shortcut medium: S minus N (no-edit control)        +0.003 [-0.003,+0.011] 
+    removal  medium: S minus N                          +0.118 [+0.064,+0.177] *
+    removal  medium: P minus N                          +0.114 [+0.061,+0.173] *
+    shortcut clean: S minus P                           +0.002 [-0.006,+0.010] 
+    shortcut clean: S minus N (no-edit control)         +0.000 [-0.009,+0.009] 
+    removal  clean: S minus N                           +0.056 [+0.021,+0.096] *
+    removal  clean: P minus N                           +0.058 [+0.021,+0.098] *
+
+==== smol: 235 test groups from 231 source images ====
+  cell         seeds  shortcut [hier. 95% CI]      images-only CI (seeds fixed) removal rate [hier.]    gain vs frozen [hier.]
+  clean/N          3  +0.007 [+0.000,+0.021]       +0.007 [+0.000,+0.017]       0.899 [0.845,0.945]     -0.024 [-0.071,+0.014]
+  clean/P          3  +0.024 [+0.007,+0.045]       +0.024 [+0.007,+0.044]       0.962 [0.935,0.983]     +0.038 [+0.017,+0.064]
+  clean/S          3  +0.027 [+0.008,+0.050]       +0.027 [+0.009,+0.048]       0.962 [0.935,0.983]     +0.038 [+0.017,+0.064]
+  crude/DS         3  +0.054 [+0.024,+0.090]       +0.054 [+0.029,+0.080]       0.959 [0.930,0.983]     +0.193 [+0.143,+0.247]
+  crude/N          3  +0.006 [-0.010,+0.025]       +0.006 [-0.003,+0.017]       0.732 [0.664,0.798]     -0.034 [-0.081,+0.004]
+  crude/P          3  +0.013 [-0.004,+0.033]       +0.013 [-0.003,+0.031]       0.955 [0.926,0.979]     +0.189 [+0.141,+0.242]
+  crude/S          3  +0.044 [+0.017,+0.073]       +0.044 [+0.019,+0.072]       0.970 [0.947,0.989]     +0.204 [+0.154,+0.260]
+  medium/N         3  +0.003 [-0.000,+0.013]       +0.003 [-0.000,+0.009]       0.874 [0.815,0.926]     -0.028 [-0.073,+0.006]
+  medium/P         3  +0.024 [+0.007,+0.044]       +0.024 [+0.008,+0.043]       0.955 [0.926,0.979]     +0.052 [+0.026,+0.084]
+  medium/S         3  +0.026 [+0.008,+0.046]       +0.026 [+0.008,+0.045]       0.949 [0.919,0.975]     +0.047 [+0.021,+0.077]
+
+  INDIVIDUAL SEEDS (each run alone; CI over source images only):
+  cell          seed  shortcut [95% CI]          removal rate [95% CI]
+  clean/N          0  +0.013 [+0.000,+0.030]     0.915 [0.879,0.948]
+  clean/N          1  +0.000 [+0.000,+0.000]     0.855 [0.807,0.896]
+  clean/N          2  +0.009 [+0.000,+0.021]     0.928 [0.895,0.958]
+  clean/N        between-seed shortcut: min +0.000  max +0.013  SD 0.007
+  clean/P          0  +0.021 [+0.004,+0.039]     0.962 [0.935,0.983]
+  clean/P          1  +0.021 [+0.004,+0.039]     0.962 [0.935,0.983]
+  clean/P          2  +0.030 [+0.009,+0.052]     0.962 [0.935,0.983]
+  clean/P        between-seed shortcut: min +0.021  max +0.030  SD 0.005
+  clean/S          0  +0.026 [+0.008,+0.047]     0.962 [0.935,0.983]
+  clean/S          1  +0.034 [+0.013,+0.060]     0.962 [0.935,0.983]
+  clean/S          2  +0.021 [+0.004,+0.039]     0.962 [0.935,0.983]
+  clean/S        between-seed shortcut: min +0.021  max +0.034  SD 0.007
+  crude/DS         0  +0.051 [+0.026,+0.080]     0.966 [0.940,0.987]
+  crude/DS         1  +0.077 [+0.043,+0.111]     0.966 [0.940,0.987]
+  crude/DS         2  +0.034 [+0.013,+0.056]     0.945 [0.915,0.970]
+  crude/DS       between-seed shortcut: min +0.034  max +0.077  SD 0.021
+  crude/N          0  +0.013 [+0.000,+0.030]     0.749 [0.692,0.805]
+  crude/N          1  -0.009 [-0.022,+0.000]     0.689 [0.630,0.749]
+  crude/N          2  +0.013 [+0.000,+0.030]     0.757 [0.699,0.814]
+  crude/N        between-seed shortcut: min -0.009  max +0.013  SD 0.012
+  crude/P          0  +0.017 [+0.000,+0.038]     0.962 [0.936,0.983]
+  crude/P          1  +0.009 [-0.008,+0.026]     0.945 [0.914,0.970]
+  crude/P          2  +0.013 [-0.004,+0.034]     0.957 [0.928,0.979]
+  crude/P        between-seed shortcut: min +0.009  max +0.017  SD 0.004
+  crude/S          0  +0.038 [+0.013,+0.068]     0.974 [0.953,0.992]
+  crude/S          1  +0.051 [+0.021,+0.085]     0.966 [0.940,0.987]
+  crude/S          2  +0.043 [+0.017,+0.071]     0.970 [0.948,0.987]
+  crude/S        between-seed shortcut: min +0.038  max +0.051  SD 0.007
+  medium/N         0  +0.004 [+0.000,+0.013]     0.885 [0.841,0.927]
+  medium/N         1  +0.000 [+0.000,+0.000]     0.830 [0.780,0.877]
+  medium/N         2  +0.004 [+0.000,+0.013]     0.906 [0.867,0.944]
+  medium/N       between-seed shortcut: min +0.000  max +0.004  SD 0.002
+  medium/P         0  +0.026 [+0.008,+0.047]     0.953 [0.923,0.979]
+  medium/P         1  +0.026 [+0.008,+0.047]     0.957 [0.928,0.979]
+  medium/P         2  +0.021 [+0.004,+0.042]     0.953 [0.923,0.979]
+  medium/P       between-seed shortcut: min +0.021  max +0.026  SD 0.002
+  medium/S         0  +0.030 [+0.009,+0.052]     0.949 [0.919,0.975]
+  medium/S         1  +0.021 [+0.004,+0.039]     0.949 [0.919,0.975]
+  medium/S         2  +0.026 [+0.008,+0.047]     0.949 [0.919,0.975]
+  medium/S       between-seed shortcut: min +0.021  max +0.030  SD 0.004
+
+  PAIRED CONTRASTS (shared image draw; seeds redrawn independently; * = 95% CI excludes 0):
+    shortcut crude: S minus P                           +0.031 [+0.011,+0.053] *
+    shortcut crude: S minus N (no-edit control)         +0.038 [+0.013,+0.067] *
+    removal  crude: S minus N                           +0.239 [+0.177,+0.305] *
+    removal  crude: P minus N                           +0.223 [+0.162,+0.289] *
+    shortcut crude: DS minus S (DPO-style vs CE)        +0.010 [-0.018,+0.040] 
+    shortcut medium: S minus P                          +0.001 [-0.011,+0.015] 
+    shortcut medium: S minus N (no-edit control)        +0.022 [+0.006,+0.043] *
+    removal  medium: S minus N                          +0.075 [+0.034,+0.130] *
+    removal  medium: P minus N                          +0.080 [+0.037,+0.134] *
+    shortcut clean: S minus P                           +0.003 [-0.010,+0.018] 
+    shortcut clean: S minus N (no-edit control)         +0.020 [+0.004,+0.041] *
+    removal  clean: S minus N                           +0.063 [+0.024,+0.113] *
+    removal  clean: P minus N                           +0.063 [+0.024,+0.113] *
+
+NOTES
+ * With 2-3 seeds the seed level has only a handful of distinct resamples: it widens the interval but cannot estimate between-seed variance well. Read it together with the individual-seed lines and the between-seed range.
+ * N (no-edit control) has no edit level; it is scored on every test edit and compared with the trained cell that uses the same edit. Its 'shortcut' is the effect of fine-tuning alone.
+ * POPE, MME and natural-image items are not tied to the 235 source-image groups and are not in this script.
+wrote /kaggle/working/n10_out

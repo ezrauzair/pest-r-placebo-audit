@@ -1,0 +1,41 @@
+Editor: sd   items in both files: 100   (completeness is counted separately for every metric)
+  (a) target removed in the removal edit       reviewer A: 80/100 = 0.800 [0.711,0.867]   (answered 100/100)
+  (a) target removed in the removal edit       reviewer B: 82/100 = 0.820 [0.733,0.883]   (answered 100/100)
+                                               BOTH yes: 74/100 = 0.740 [0.646,0.816]   kappa = 0.55   (rated by both: 100/100)
+  (b) target preserved in the placebo edit     reviewer A: 99/100 = 0.990 [0.946,0.998]   (answered 100/100)
+  (b) target preserved in the placebo edit     reviewer B: 94/100 = 0.940 [0.875,0.972]   (answered 100/100)
+                                               BOTH yes: 93/100 = 0.930 [0.863,0.966]   kappa = -0.02   (rated by both: 100/100)
+  (c1) any artifact in the removal edit        reviewer A: 32/100 = 0.320 [0.237,0.417]   (answered 100/100)
+  (c1) any artifact in the removal edit        reviewer B: 22/100 = 0.220 [0.150,0.311]   (answered 100/100)
+                                               BOTH yes: 16/100 = 0.160 [0.101,0.244]   kappa = 0.45   (rated by both: 100/100)
+  (c2) any artifact in the placebo edit        reviewer A: 7/100 = 0.070 [0.034,0.137]   (answered 100/100)
+  (c2) any artifact in the placebo edit        reviewer B: 6/100 = 0.060 [0.028,0.125]   (answered 100/100)
+                                               BOTH yes: 0/100 = 0.000 [0.000,0.037]   kappa = -0.07   (rated by both: 100/100)
+  (c3) obvious failure, removal edit           reviewer A: 18/100 = 0.180 [0.117,0.267]   (answered 100/100)
+  (c3) obvious failure, removal edit           reviewer B: 18/100 = 0.180 [0.117,0.267]   (answered 100/100)
+                                               BOTH yes: 12/100 = 0.120 [0.070,0.198]   kappa = 0.59   (rated by both: 100/100)
+  (c4) obvious failure, placebo edit           reviewer A: 0/100 = 0.000 [0.000,0.037]   (answered 100/100)
+  (c4) obvious failure, placebo edit           reviewer B: 1/100 = 0.010 [0.002,0.054]   (answered 100/100)
+                                               BOTH yes: 0/100 = 0.000 [0.000,0.037]   kappa = 0.00   (rated by both: 100/100)
+Disagreements and notes to adjudicate (item code: A vs B):
+  A007 removed: A=False B=True
+  A011 preserved: A=True B=False
+  A012 removed: A=False B=True
+  A016 preserved: A=True B=False
+  A022 removed: A=True B=False
+  A025 removed: A=True B=False
+  A031 removed: A=True B=False
+  A031 preserved: A=True B=False
+  A048 removed: A=True B=False
+  A050 removed: A=True B=False
+  A052 removed: A=False B=True
+  A056 preserved: A=True B=False
+  A071 preserved: A=True B=False
+  A075 removed: A=False B=True
+  A076 removed: A=True B=False
+  A078 removed: A=False B=True
+  A082 preserved: A=True B=False
+  A086 removed: A=False B=True
+  A088 removed: A=False B=True
+  A088 preserved: A=False B=True
+  A093 removed: A=False B=True
