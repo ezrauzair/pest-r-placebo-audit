@@ -1,0 +1,11 @@
+# never commit secrets, the audit key, filled reviewer forms, images or weights
+*.key
+.env
+audit_KEY*
+reviewer_*_FILLED.xlsx
+reviewer_*.xlsx
+*.safetensors
+*.pt
+*.bin
+*.zip
+__pycache__/
